@@ -6,16 +6,17 @@ public class GamblingSimulator {
     static int WIN=1;
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling Simulator Program");
-        int gameCheck= (int) (Math.random()*10)%2;
-        if(WIN==gameCheck){
-            STAKE_PER_DAY++;
-            System.out.println("you win the won");
+        while(STAKE_PER_DAY>50 && STAKE_PER_DAY<150) {
+            int gameCheck = (int) (Math.random() * 10) % 2;
+            if (WIN == gameCheck) {
+                STAKE_PER_DAY++;
+                System.out.println("you win the won");
 
-        }else{
-            STAKE_PER_DAY--;
-            System.out.println("you lost the game");
+            } else {
+                STAKE_PER_DAY--;
+                System.out.println("you lost the game");
+            }
+            System.out.println("stake per day:" + STAKE_PER_DAY);
         }
-        System.out.println("stake per day:"+STAKE_PER_DAY);
-
     }
 }
